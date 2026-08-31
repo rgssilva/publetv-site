@@ -9,7 +9,7 @@
 
 const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_SUPORTE ?? "";
 
-export const EMAIL_CONTATO = "contato@publitv.com.br";
+export const EMAIL_CONTATO = "contato@publetv.com.br";
 
 export const LINK_SUPORTE = whatsapp
   ? `https://wa.me/${whatsapp}`

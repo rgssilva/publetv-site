@@ -9,7 +9,7 @@
 /** TV Box, preço one-time. */
 export const PRECO_TVBOX_CENTAVOS = 29900;
 
-/** Assinatura publiTV, preço recorrente mensal. */
+/** Assinatura publeTV, preço recorrente mensal. */
 export const PRECO_MENSAL_CENTAVOS = 2990;
 
 /**

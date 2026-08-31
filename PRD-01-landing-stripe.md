@@ -1,4 +1,4 @@
-# PRD 01 — Landing Page + Checkout Stripe (PubliTV)
+# PRD 01 — Landing Page + Checkout Stripe (publeTV)
 
 **Repositório:** landing page (repo do Helian)
 **Escopo:** levar o visitante da landing até o pagamento concluído no Stripe, com todos os dados necessários para o provisionamento automático.
@@ -8,12 +8,12 @@
 
 ## 1. Contexto
 
-O PubliTV vende dois itens em conjunto na primeira compra:
+O publeTV vende dois itens em conjunto na primeira compra:
 
 | Item | Tipo de preço | Cobrança |
 |---|---|---|
 | TV Box (hardware) | `one_time` | Uma vez, na primeira fatura |
-| Assinatura PubliTV | `recurring` (mensal) | Recorrente, **a partir da data da compra** |
+| Assinatura publeTV | `recurring` (mensal) | Recorrente, **a partir da data da compra** |
 
 O Helian já cadastrou os dois produtos no Stripe.
 
@@ -26,15 +26,15 @@ O Helian já cadastrou os dois produtos no Stripe.
 
 > **Nota operacional (fase 1):** nas primeiras vendas o Helian entrega pessoalmente nos estabelecimentos locais. Isso não altera nada na arquitetura — o modelo de entrega segue desenhado para envio por transportadora, que é o estado permanente. A entrega em mãos é apenas um pedido que passa rápido pelos mesmos estados.
 
-A decisão de arquitetura é **não coletar dados na landing page** — o visitante vai direto para o checkout do Stripe, que já é uma tela otimizada, com PCI compliance e suporte a Pix/cartão. Os dados do cliente são capturados **dentro do checkout** e chegam ao PubliTV via webhook. Endereço de entrega é coletado depois, no onboarding (PRD 02).
+A decisão de arquitetura é **não coletar dados na landing page** — o visitante vai direto para o checkout do Stripe, que já é uma tela otimizada, com PCI compliance e suporte a Pix/cartão. Os dados do cliente são capturados **dentro do checkout** e chegam ao publeTV via webhook. Endereço de entrega é coletado depois, no onboarding (PRD 02).
 
 ### 1.2 Por que o concorrente coleta dados antes (e nós não precisamos)
 
 O QR TV Indoor coleta nome/e-mail/senha, quantidade e endereço completo **antes** de mandar pro Stripe. Isso não é escolha de UX — é imposição técnica: eles cobram frete calculado por CEP (PAC/SEDEX via Correios), e o Stripe precisa do valor final antes de criar a sessão de pagamento.
 
-Como o PubliTV embute o frete no preço, essa restrição desaparece. Podemos ir direto ao checkout, com muito menos código.
+Como o publeTV embute o frete no preço, essa restrição desaparece. Podemos ir direto ao checkout, com muito menos código.
 
-**Diferença adicional:** o QR TV **não** vende a assinatura no checkout — o aviso deles diz que cada TV exige um ponto ativo a partir de R$ 29,90/mês, ativado no painel após o recebimento do aparelho. O PubliTV vende os dois juntos. Ver §1.3.
+**Diferença adicional:** o QR TV **não** vende a assinatura no checkout — o aviso deles diz que cada TV exige um ponto ativo a partir de R$ 29,90/mês, ativado no painel após o recebimento do aparelho. O publeTV vende os dois juntos. Ver §1.3.
 
 ### 1.3 Riscos das decisões (aceitos, com mitigação)
 
@@ -67,7 +67,7 @@ Só migrar para Checkout Session via API se no futuro houver cupom dinâmico, pr
 Confirmar com o Helian e anotar os IDs:
 
 - `price_...` — TV Box, tipo **one-time**, moeda BRL
-- `price_...` — Assinatura PubliTV, tipo **recurring**, intervalo `month`, moeda BRL
+- `price_...` — Assinatura publeTV, tipo **recurring**, intervalo `month`, moeda BRL
 
 > **Importante:** em modo `subscription`, o Stripe aceita line items one-time. O valor da TV Box entra na **primeira fatura** junto com o primeiro mês. Não criar duas transações separadas.
 
@@ -85,7 +85,7 @@ Dashboard → Payment Links → New:
   - Tipo: `text`
   - Obrigatório: sim
   - Key: `cpf_cnpj` (anotar essa key, o webhook vai depender dela)
-- **Página de sucesso:** redirecionar para `https://publitv.com.br/obrigado?session_id={CHECKOUT_SESSION_ID}` (ver §5).
+- **Página de sucesso:** redirecionar para `https://publetv.com.br/obrigado?session_id={CHECKOUT_SESSION_ID}` (ver §5).
 - **Métodos de pagamento:** cartão + Pix (se disponível na conta). Boleto **não** — atrasa o provisionamento em dias.
 - **Trial:** **nenhum.** A assinatura inicia na data da compra (decisão §1.1). Não configurar `trial_period_days`.
 - **Quantidade de aparelhos:** fixa em 1 na fase 1. Se no futuro permitir múltiplas TVs, a quantidade precisa ser espelhada nos dois line items (1 aparelho = 1 ponto de assinatura), o que o Payment Link não faz sozinho — nesse momento migra para Checkout Session via API.

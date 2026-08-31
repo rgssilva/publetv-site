@@ -20,7 +20,7 @@ export function PurchaseTracker() {
     );
     if (!sessionId) return;
 
-    const chave = `publitv:purchase:${sessionId}`;
+    const chave = `publetv:purchase:${sessionId}`;
     try {
       if (sessionStorage.getItem(chave)) return;
       sessionStorage.setItem(chave, "1");

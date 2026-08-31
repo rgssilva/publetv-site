@@ -1,4 +1,4 @@
-# Configuração do Stripe — PubliTV
+# Configuração do Stripe — publeTV
 
 Referência operacional do PRD-01. **Este documento é um template a preencher**
 conforme o Helian cria os objetos no dashboard. Enquanto os campos estiverem
@@ -11,7 +11,7 @@ como `_a preencher_`, a landing está rodando com valores placeholder.
 | Item | Tipo | Intervalo | Moeda | Price ID (teste) | Price ID (produção) |
 |---|---|---|---|---|---|
 | TV Box | `one_time` | — | BRL | _a preencher_ | _a preencher_ |
-| Assinatura publiTV | `recurring` | `month` | BRL | _a preencher_ | _a preencher_ |
+| Assinatura publeTV | `recurring` | `month` | BRL | _a preencher_ | _a preencher_ |
 
 Valor da TV Box: _a preencher_
 Valor da mensalidade: _a preencher_
@@ -40,7 +40,7 @@ Dashboard → Payment Links → New. Marcar cada item ao conferir:
 - [ ] Campo customizado: label `CPF ou CNPJ`, tipo `text`, obrigatório,
       key **`cpf_cnpj`** — o webhook do PRD 02 depende dessa key exata
 - [ ] Métodos: cartão + Pix. **Boleto não** (atrasa o provisionamento em dias)
-- [ ] Página de sucesso → `https://publitv.com.br/obrigado?session_id={CHECKOUT_SESSION_ID}`
+- [ ] Página de sucesso → `https://publetv.com.br/obrigado?session_id={CHECKOUT_SESSION_ID}`
 
 ### URLs geradas
 

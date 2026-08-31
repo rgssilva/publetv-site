@@ -144,7 +144,7 @@ export default function Home() {
             <div>
               <p className="mb-4 flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-cyan">
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan" />
-                Por que a publiTV
+                Por que a publeTV
               </p>
               <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
                 <RevealText text="Ninguém compra o que não conhece." />
@@ -152,7 +152,7 @@ export default function Home() {
               <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-3xl">
                 <Image
                   src="/sobre.webp"
-                  alt="Cliente vendo ofertas exibidas na tela publiTV dentro da loja"
+                  alt="Cliente vendo ofertas exibidas na tela publeTV dentro da loja"
                   fill
                   sizes="(min-width: 1024px) 26rem, 100vw"
                   className="object-cover"
@@ -169,7 +169,7 @@ export default function Home() {
                 </p>
                 <p>
                   Direcionar essa decisão na hora certa, dentro da loja, é o
-                  papel da comunicação. É exatamente esse o papel da publiTV:
+                  papel da comunicação. É exatamente esse o papel da publeTV:
                   transformar cada tela do seu espaço no ponto de venda que
                   fala pelo seu negócio, no momento certo.
                 </p>
@@ -219,7 +219,7 @@ export default function Home() {
                 >
                   <Image
                     src={item.src}
-                    alt={`Tela publiTV em ${item.nome.toLowerCase()}`}
+                    alt={`Tela publeTV em ${item.nome.toLowerCase()}`}
                     fill
                     sizes="448px"
                     className="object-cover"
@@ -243,7 +243,7 @@ export default function Home() {
             Quem já testou
           </p>
           <h2 className="font-heading max-w-2xl text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
-            <RevealText text="Clientes piloto já rodando a publiTV a um custo reduzido." />
+            <RevealText text="Clientes piloto já rodando a publeTV a um custo reduzido." />
           </h2>
           <div className="mt-14 grid gap-5 sm:grid-cols-3">
             {depoimentos.map((dep) => (
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="mx-auto mt-14 max-w-xl rounded-3xl border border-border bg-surface p-6 sm:p-10">
             <div className="text-center">
               <h3 className="font-heading text-xl font-semibold text-foreground">
-                TV Box publiTV + assinatura
+                TV Box publeTV + assinatura
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted">
                 O aparelho é seu. A assinatura mantém as telas rodando, com
@@ -355,7 +355,7 @@ export default function Home() {
               href={`mailto:${EMAIL_CONTATO}`}
               className="text-sm text-muted underline underline-offset-4 transition hover:text-foreground"
             >
-              Prefere conversar antes? Fale com a publiTV
+              Prefere conversar antes? Fale com a publeTV
             </a>
           </div>
         </section>
@@ -367,7 +367,7 @@ export default function Home() {
             publi<span className="text-cyan font-semibold">TV</span> — mídia
             indoor premium
           </span>
-          <span>© {new Date().getFullYear()} publiTV. Todos os direitos reservados.</span>
+          <span>© {new Date().getFullYear()} publeTV. Todos os direitos reservados.</span>
         </div>
       </footer>
     </div>

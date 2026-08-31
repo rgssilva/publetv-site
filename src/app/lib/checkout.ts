@@ -20,7 +20,7 @@ if (!link && process.env.NODE_ENV === "production") {
 
 if (!link && process.env.NODE_ENV !== "production") {
   console.warn(
-    "[publiTV] NEXT_PUBLIC_STRIPE_PAYMENT_LINK não definida — os CTAs de " +
+    "[publeTV] NEXT_PUBLIC_STRIPE_PAYMENT_LINK não definida — os CTAs de " +
       "compra apontam para '#'. Copie .env.example para .env.local.",
   );
 }

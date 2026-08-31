@@ -6,8 +6,8 @@ import { LABEL_SUPORTE, LINK_SUPORTE } from "../lib/contato";
 import { PurchaseTracker } from "./PurchaseTracker";
 
 export const metadata: Metadata = {
-  title: "Pedido confirmado — publiTV",
-  description: "Confirmação da sua compra da TV Box publiTV.",
+  title: "Pedido confirmado — publeTV",
+  description: "Confirmação da sua compra da TV Box publeTV.",
   // URL de retorno do checkout: não faz sentido em busca e pode vazar
   // parâmetros de sessão no índice.
   robots: { index: false, follow: false },
@@ -35,9 +35,9 @@ export default function Obrigado() {
       <header className="px-3 py-4 sm:px-6 sm:py-5">
         <Link href="/" className="inline-block">
           <Image
-            src="/logo-publitv.webp"
-            alt="publiTV"
-            width={140}
+            src="/logo-publetv.webp"
+            alt="publeTV"
+            width={166}
             height={47}
             priority
             className="h-6 w-auto sm:h-7"
@@ -101,7 +101,7 @@ export default function Obrigado() {
             indoor premium
           </span>
           <span>
-            © {new Date().getFullYear()} publiTV. Todos os direitos reservados.
+            © {new Date().getFullYear()} publeTV. Todos os direitos reservados.
           </span>
         </div>
       </footer>

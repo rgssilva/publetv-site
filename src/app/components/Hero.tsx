@@ -2,12 +2,12 @@ import Image from "next/image";
 import { Reveal, RevealText } from "./Reveal";
 
 const slides = [
-  { src: "/loja-conveniencia.webp", alt: "Tela publiTV em loja de conveniência" },
-  { src: "/posto-gasolina.webp", alt: "Tela publiTV em posto de gasolina" },
-  { src: "/acougue.webp", alt: "Tela publiTV em açougue" },
-  { src: "/academia.webp", alt: "Tela publiTV em academia" },
-  { src: "/loja-suplementos.webp", alt: "Tela publiTV em loja de suplementos" },
-  { src: "/farmacia.webp", alt: "Tela publiTV em farmácia" },
+  { src: "/loja-conveniencia.webp", alt: "Tela publeTV em loja de conveniência" },
+  { src: "/posto-gasolina.webp", alt: "Tela publeTV em posto de gasolina" },
+  { src: "/acougue.webp", alt: "Tela publeTV em açougue" },
+  { src: "/academia.webp", alt: "Tela publeTV em academia" },
+  { src: "/loja-suplementos.webp", alt: "Tela publeTV em loja de suplementos" },
+  { src: "/farmacia.webp", alt: "Tela publeTV em farmácia" },
 ];
 
 const track = [...slides, ...slides];
@@ -18,9 +18,9 @@ export function Hero() {
       {/* Nav — fora do card do degradê */}
       <div className="flex items-center justify-between px-3 py-4 sm:px-6 sm:py-5">
         <Image
-          src="/logo-publitv.webp"
-          alt="publiTV"
-          width={140}
+          src="/logo-publetv.webp"
+          alt="publeTV"
+          width={166}
           height={47}
           priority
           className="h-6 w-auto sm:h-7"
@@ -111,7 +111,7 @@ export function Hero() {
               href="#planos"
               className="font-heading whitespace-nowrap rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-navy-deep transition hover:brightness-110"
             >
-              Quero a publiTV
+              Quero a publeTV
             </a>
             <a
               href="#ecossistema"

@@ -53,7 +53,7 @@ export function AvisoCobranca({
         </div>
         <div className="flex items-baseline justify-between gap-4">
           <dt className="text-[#EEEEEE]">
-            Assinatura publiTV <span className="text-muted">— primeiro mês</span>
+            Assinatura publeTV <span className="text-muted">— primeiro mês</span>
           </dt>
           <dd className="shrink-0 tabular-nums text-foreground">
             {formatBRL(PRECO_MENSAL_CENTAVOS)}

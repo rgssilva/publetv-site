@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "PubliTv — Mídia Indoor Premium",
+  title: "publeTV — Mídia Indoor Premium",
   description:
     "Ecossistema completo de mídia indoor: instalação das telas, curadoria de conteúdo e comunicação que transforma valor em atração para o cliente.",
 };
