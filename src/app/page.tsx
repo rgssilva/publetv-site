@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Hero } from "./components/Hero";
 import { RevealText } from "./components/Reveal";
+import { VideoVsl } from "./components/VideoVsl";
 import { AvisoCobranca, ResumoCobranca } from "./components/AvisoCobranca";
 import { CheckoutButton } from "./components/CheckoutButton";
 import { EMAIL_CONTATO } from "./lib/contato";
@@ -203,15 +204,8 @@ export default function Home() {
           <h2 className="font-heading max-w-2xl text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
             <RevealText text="Em dois minutos, como a publeTV trabalha pelo seu negócio." />
           </h2>
-          <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-surface">
-            <video
-              src="/publetv-vsl.mp4"
-              poster="/publetv-vsl-poster.webp"
-              controls
-              playsInline
-              preload="metadata"
-              className="aspect-video w-full"
-            />
+          <div className="mt-14">
+            <VideoVsl />
           </div>
         </section>
 
