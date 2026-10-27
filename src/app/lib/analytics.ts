@@ -43,6 +43,26 @@ export function trackCheckoutIniciado(origem: OrigemCheckout) {
   window.gtag?.("event", "checkout_iniciado", { origem });
 }
 
+/**
+ * Eventos do vídeo, com os nomes padrão do GA4 (video_start, video_progress,
+ * video_complete) para aparecerem nos relatórios sem configuração extra.
+ * Sem equivalente no Pixel da Meta: vai como evento custom.
+ */
+export function trackVideo(
+  evento: "video_start" | "video_progress" | "video_complete",
+  percentual?: number,
+) {
+  if (typeof window === "undefined") return;
+
+  const params = {
+    video_title: "publeTV VSL",
+    video_url: "/publetv-vsl.mp4",
+    ...(percentual !== undefined && { video_percent: percentual }),
+  };
+  window.gtag?.("event", evento, params);
+  window.fbq?.("trackCustom", evento, params);
+}
+
 /** Conversão, disparada uma única vez por sessão de checkout na /obrigado. */
 export function trackPurchase(sessionId: string) {
   if (typeof window === "undefined") return;

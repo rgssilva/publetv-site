@@ -1,11 +1,15 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { trackVideo } from "../lib/analytics";
 
 export function VideoVsl() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
   const [started, setStarted] = useState(false);
+  // Marcos já enviados nesta sessão de visualização, para não repetir evento
+  // quando a pessoa volta o vídeo ou pausa e retoma.
+  const marcos = useRef(new Set<number>());
 
   function toggle() {
     const video = videoRef.current;
@@ -26,9 +30,28 @@ export function VideoVsl() {
         poster="/publetv-vsl-poster.webp"
         playsInline
         preload="metadata"
-        onPlay={() => setPlaying(true)}
+        onPlay={() => {
+          setPlaying(true);
+          if (!marcos.current.has(0)) {
+            marcos.current.add(0);
+            trackVideo("video_start");
+          }
+        }}
+        onTimeUpdate={(e) => {
+          const { currentTime, duration } = e.currentTarget;
+          if (!duration) return;
+          const pct = (currentTime / duration) * 100;
+          for (const marco of [25, 50, 75]) {
+            if (pct >= marco && !marcos.current.has(marco)) {
+              marcos.current.add(marco);
+              trackVideo("video_progress", marco);
+            }
+          }
+        }}
         onPause={() => setPlaying(false)}
         onEnded={() => {
+          trackVideo("video_complete");
+          marcos.current.clear();
           setPlaying(false);
           setStarted(false);
         }}
