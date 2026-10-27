@@ -138,6 +138,19 @@ export default function Home() {
       </section>
 
       <main className="flex-1">
+        {/* VSL */}
+        <section id="video" className="mx-auto max-w-6xl px-6 pt-24 sm:pt-32">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-cyan">
+            Veja na prática
+          </p>
+          <h2 className="font-heading max-w-2xl text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+            <RevealText text="Em dois minutos, como a publeTV trabalha pelo seu negócio." />
+          </h2>
+          <div className="mt-14">
+            <VideoVsl />
+          </div>
+        </section>
+
         {/* Diferencial */}
         <section id="diferencial" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,26rem)_1fr] lg:gap-20">
@@ -193,19 +206,6 @@ export default function Home() {
                 ))}
               </dl>
             </div>
-          </div>
-        </section>
-
-        {/* VSL */}
-        <section id="video" className="mx-auto max-w-6xl px-6 pb-24 sm:pb-32">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-cyan">
-            Veja na prática
-          </p>
-          <h2 className="font-heading max-w-2xl text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
-            <RevealText text="Em dois minutos, como a publeTV trabalha pelo seu negócio." />
-          </h2>
-          <div className="mt-14">
-            <VideoVsl />
           </div>
         </section>
 
