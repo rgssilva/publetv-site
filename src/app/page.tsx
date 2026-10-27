@@ -8,10 +8,9 @@ import { EMAIL_CONTATO } from "./lib/contato";
 const estabelecimentos = [
   { src: "/academia.webp", nome: "Academias" },
   { src: "/farmacia.webp", nome: "Farmácias" },
-  { src: "/acougue.webp", nome: "Açougues" },
-  { src: "/loja-suplementos.webp", nome: "Lojas de suplementos" },
-  { src: "/loja-conveniencia.webp", nome: "Lojas de conveniência" },
   { src: "/posto-gasolina.webp", nome: "Postos de combustível" },
+  { src: "/loja-conveniencia.webp", nome: "Lojas de conveniência" },
+  { src: "/loja-suplementos.webp", nome: "Lojas de suplementos" },
 ];
 
 const estabelecimentosTrack = [...estabelecimentos, ...estabelecimentos];
@@ -196,6 +195,26 @@ export default function Home() {
           </div>
         </section>
 
+        {/* VSL */}
+        <section id="video" className="mx-auto max-w-6xl px-6 pb-24 sm:pb-32">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-cyan">
+            Veja na prática
+          </p>
+          <h2 className="font-heading max-w-2xl text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+            <RevealText text="Em dois minutos, como a publeTV trabalha pelo seu negócio." />
+          </h2>
+          <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-surface">
+            <video
+              src="/publetv-vsl.mp4"
+              poster="/publetv-vsl-poster.webp"
+              controls
+              playsInline
+              preload="metadata"
+              className="aspect-video w-full"
+            />
+          </div>
+        </section>
+
         {/* Segmentos */}
         <section id="segmentos" className="pb-24 sm:pb-32">
           <div className="mx-auto max-w-6xl px-6">
@@ -364,7 +383,7 @@ export default function Home() {
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted sm:flex-row">
           <span className="font-heading">
-            publi<span className="text-cyan font-semibold">TV</span> — mídia
+            puble<span className="text-cyan font-semibold">TV</span> — mídia
             indoor premium
           </span>
           <span>© {new Date().getFullYear()} publeTV. Todos os direitos reservados.</span>

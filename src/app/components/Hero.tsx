@@ -3,11 +3,10 @@ import { Reveal, RevealText } from "./Reveal";
 
 const slides = [
   { src: "/loja-conveniencia.webp", alt: "Tela publeTV em loja de conveniência" },
-  { src: "/posto-gasolina.webp", alt: "Tela publeTV em posto de gasolina" },
-  { src: "/acougue.webp", alt: "Tela publeTV em açougue" },
   { src: "/academia.webp", alt: "Tela publeTV em academia" },
-  { src: "/loja-suplementos.webp", alt: "Tela publeTV em loja de suplementos" },
   { src: "/farmacia.webp", alt: "Tela publeTV em farmácia" },
+  { src: "/posto-gasolina.webp", alt: "Tela publeTV em posto de combustível" },
+  { src: "/loja-suplementos.webp", alt: "Tela publeTV em loja de suplementos" },
 ];
 
 const track = [...slides, ...slides];
